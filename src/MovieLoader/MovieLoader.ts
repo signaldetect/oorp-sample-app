@@ -14,12 +14,10 @@ export default function MovieLoader(acter: Vue): MovieLoaderContract {
   const _dataList = ref<RawData[]>([]);
 
   function _loadImdbIdList(): void {
-    if (_dataList.value.length > 0) {
-      const imdbIdList: string[] = _dataList.value.map(
-        (data: RawData) => data.imdbID
-      );
-      acter.$emit('MovieLoader.imdbIdListLoaded', imdbIdList);
-    }
+    const imdbIdList: string[] = _dataList.value.map(
+      (data: RawData) => data.imdbID
+    );
+    acter.$emit('MovieLoader.imdbIdListLoaded', imdbIdList);
   }
 
   function initializeLoader(): void {
@@ -32,7 +30,8 @@ export default function MovieLoader(acter: Vue): MovieLoaderContract {
     fetch(apiUrl)
       .then(response => response.json())
       .then(jsonResponse => {
-        _dataList.value = jsonResponse.Search;
+        _dataList.value =
+          jsonResponse.Response === 'True' ? jsonResponse.Search : [];
 
         _loadImdbIdList();
       });
