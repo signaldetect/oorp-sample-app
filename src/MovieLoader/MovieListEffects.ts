@@ -10,14 +10,8 @@ export default function useMovieListEffects(
   acter: Vue,
   $this: MovieLoaderContract
 ): void {
-  const sleep = (milliseconds: number) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-  };
-
   function slotListPrepared(): void {
-    sleep(5000).then(() => {
-      $this.loadMovieData();
-    });
+    $this.loadMovieData();
   }
 
   acter.$on('MovieList.slotListPrepared', slotListPrepared);

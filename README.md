@@ -1,8 +1,9 @@
 # OORP Sample App within Vue.js
 
-OORP is an [object-oriented
+A demo project to show event based architecture in Vue.js application using
+OORP principle. OORP is an [object-oriented
 reactive](http://en.wikipedia.org/wiki/Reactive_programming#Object-oriented)
-architecture.
+programming.
 
 ## Project setup
 ```

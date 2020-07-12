@@ -23,7 +23,7 @@ export default defineComponent({
     const movieTitle = computed(() => _movieTitle.value);
 
     function initialize(): void {
-      _movieTitle.value = 'Joker';
+      _movieTitle.value = 'Star Wars';
 
       acter.$emit('Search.searchInitialized');
     }
