@@ -25,7 +25,8 @@ export default function MovieLoader(acter: Vue): MovieLoaderContract {
   }
 
   function fetchMovies(searchText: string): void {
-    const apiUrl = `https://www.omdbapi.com/?s=${searchText}&apikey=${_apiKey.value}`;
+    const apiHost = 'https://www.omdbapi.com';
+    const apiUrl = `${apiHost}/?s=${searchText}&apikey=${_apiKey.value}`;
 
     fetch(apiUrl)
       .then(response => response.json())

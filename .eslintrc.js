@@ -21,7 +21,8 @@ module.exports = {
       {
         singleQuote: true
       }
-    ]
+    ],
+    'max-len': ['error', { code: 80 }]
   },
   overrides: [
     {
